@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.LabeledIntent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -89,25 +90,24 @@ public class MainActivity extends AppCompatActivity {
         binding.sendBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,SecondActivity.class);
                 if (isDog) {
                     Intent intentdog = new Intent(MainActivity.this,SecondActivity.class);
-                    intent.putExtra("Key", "Собака");
+                    intentdog.putExtra("Key", "Собака");
                     startActivity(intentdog);
                 }
 
                 if (isCat) {
-                    Intent intentdog = new Intent(MainActivity.this,SecondActivity.class);
-                    intent.putExtra("Key", "Кошка");
-                    startActivity(intentdog);
+                    Intent intentcat = new Intent(MainActivity.this,SecondActivity.class);
+                    intentcat.putExtra("Key", "Кошка");
+                    startActivity(intentcat);
                 }
 
                 if (isHorse) {
-                    Intent intentdog = new Intent(MainActivity.this,SecondActivity.class);
-                    intent.putExtra("Key", "Лошадь");
-                    startActivity(intentdog);
+                    Intent intenthorse = new Intent(MainActivity.this,SecondActivity.class);
+                    intenthorse.putExtra("Key", "Лошадь");
+                    startActivity(intenthorse);
                 }
-                startActivity(intent);
+
             }
         });
     }
